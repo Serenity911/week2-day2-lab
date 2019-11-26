@@ -28,4 +28,13 @@ attr_reader :route_number, :destination
     @passengers = []
   end
 
+  def pick_up_from_stop(bus_stop)
+    # people_in_queue = []
+    for person in bus_stop.queue
+      @passengers << person
+    end
+    bus_stop.empty_queue
+
+  end
+
 end
