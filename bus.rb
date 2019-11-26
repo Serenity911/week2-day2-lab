@@ -5,10 +5,27 @@ attr_reader :route_number, :destination
   def initialize(route_number, destination)
     @route_number = route_number
     @destination = destination
+    @passengers = []
   end
 
   def drive()
     return "Brum Brum"
+  end
+
+  def passengers_count
+    return @passengers.length
+  end
+
+  def pick_up(passenger)
+    @passengers << passenger
+  end
+
+  def drop_off(passenger)
+    @passengers.delete(passenger)
+  end
+
+  def empty_bus()
+    @passengers = []
   end
 
 end
